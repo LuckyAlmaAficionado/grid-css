@@ -1,0 +1,124 @@
+body {
+  background: url("bg.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+:root {
+  --main-radius: 5px;
+  --main-padding: 5px;
+}
+
+.container {
+  display: grid;
+  height: 97vh;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 0.3fr 1.4fr 0.6fr 0.3fr;
+  grid-template-areas:
+    "nav nav nav nav"
+    "sidebar asd main main"
+    "sidebar wraper wraper wraper"
+    "footer footer footer footer";
+  grid-gap: 0.5rem;
+  font-family: "Inter", sans-serif;
+  font-weight: 800;
+  text-transform: uppercase;
+  font-size: 12px;
+  text-align: center;
+}
+
+.logo {
+  display: flex;
+}
+
+img {
+  width: 100%;
+}
+
+nav {
+  background: #c8dfd7;
+  grid-area: nav;
+  border-radius: var(--main-radius);
+  padding-top: var(--main-padding);
+}
+
+main {
+  background: #6fffd2;
+  grid-area: main;
+  border-radius: var(--main-radius);
+  padding-top: var(--main-padding);
+}
+
+main img {
+  border-radius: var(--main-radius);
+  border: 1px solid red;
+}
+
+#sidebar {
+  background: red;
+  grid-area: sidebar;
+  border-radius: var(--main-radius);
+  padding-top: var(--main-padding);
+}
+
+.wraper {
+  background: #b92be4;
+  grid-area: wraper;
+  display: flex;
+  overflow-x: auto;
+
+  border-radius: var(--main-radius);
+  padding-top: var(--main-padding);
+}
+
+.wraper::-webkit-scrollbar {
+  width: 5px;
+}
+
+.wraper::-webkit-scrollbar-track {
+  border-radius: 5px;
+  box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.25);
+}
+
+.wraper::-webkit-scrollbar-thumb {
+  border-radius: 5px;
+  background-color: #009578;
+  transition: 0.3s;
+}
+
+.wraper::-webkit-scrollbar-thumb:hover {
+  background-color: red;
+}
+
+.wraper .item {
+  min-width: 100px;
+  line-height: 100px;
+  text-align: center;
+  background-color: #034754;
+  margin: 5px;
+  margin-bottom: 4px;
+  padding: var(--main-padding);
+  border-radius: var(--main-radius);
+}
+
+footer {
+  background: #034754;
+  grid-area: footer;
+  border-radius: var(--main-radius);
+  padding-top: var(--main-padding);
+}
+
+@media only screen and (max-width: 550px) {
+  .container {
+    grid-template-columns: 1fr;
+    grid-template-rows: 0.4fr 0.4fr 2.2fr 1.2fr 1.2fr 1.2fr 1fr;
+    grid-template-areas:
+      "nav"
+      "sidebar"
+      "main"
+      "content1"
+      "content2"
+      "content3"
+      "footer";
+  }
+}

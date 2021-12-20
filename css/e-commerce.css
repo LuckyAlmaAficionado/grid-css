@@ -1,0 +1,50 @@
+:root {
+  --main-radius: 5px;
+  --main-padding: 5px;
+}
+
+.container {
+  display: grid;
+  height: 97vh;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 0.3fr 1fr 1fr 0.3fr;
+  grid-template-areas:
+    "nav nav nav nav"
+    "sidebar content content content"
+    "sidebar content content content"
+    "footer footer footer footer";
+  grid-gap: 0.5rem;
+  font-family: "Inter", sans-serif;
+  font-weight: 800;
+  text-transform: uppercase;
+  font-size: 12px;
+  text-align: center;
+}
+
+nav {
+  grid-area: nav;
+  background: rgb(38, 216, 97);
+  border-radius: var(--main-radius);
+  padding-top: var(--main-padding);
+}
+
+footer {
+  grid-area: footer;
+  background: red;
+  border-radius: var(--main-radius);
+  padding-top: var(--main-padding);
+}
+
+#sidebar {
+  grid-area: sidebar;
+  background: blanchedalmond;
+  border-radius: var(--main-radius);
+  padding-top: var(--main-padding);
+}
+
+#content {
+  grid-area: content;
+  background: blanchedalmond;
+  border-radius: var(--main-radius);
+  padding-top: var(--main-padding);
+}
